@@ -1,0 +1,39 @@
+---
+title: "Intro to dice"
+author: "Poojan"
+date: "4/26/18"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dieroller)
+```
+
+## Dice
+
+This package represents die, including roll obects
+
+#Creating a dice
+
+```{r}
+default_dice <-die()
+die_with_letters <- die(sides = c("z", "x", "c", "v", "b", "n"))
+loaded_die <- die(prob = c(1,0,0,0,0,0))
+```
+
+##Creating a roll object
+A roll object takes in two parameters, a die and the number of rolls
+
+```{r}
+fair_6rolls <- roll(default_dice, 6)
+```
+
+##You can summarize roll objects too
+```{r}
+summary(fair_6rolls)
+```
+
